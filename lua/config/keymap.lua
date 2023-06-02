@@ -26,8 +26,9 @@ local options = {
 	bufferLine8 = { "n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", opts },
 	bufferLine9 = { "n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts },
 
-	termToggle = { "n", "<space>tt", ":ToggleTerm<CR>", opts },
+	termToggle = { "n", "<space>tt", '<Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>', opts },
 	termToggleFloat = { "n", "<space>tf", ":ToggleTerm direction=float<CR>", opts },
+	ternLazyGit = { "n", "<space>tg", ':100TermExec cmd="lazygit; exit" direction=float<CR>', opts },
 	nvimTreeToggle = { "n", "<space>ft", ":NvimTreeToggle<CR>", opts },
 	gitDiffthis = { "n", "<space>gd", ":Gitsigns diffthis<CR>", opts },
 	gitPreviewHunk = { "n", "<space>gp", ":Gitsigns preview_hunk<CR>", opts },

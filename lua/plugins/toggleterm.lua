@@ -16,7 +16,14 @@ return {
 			local utils = require("utils")
 			local config = require("config/keymap")
 			utils.setKeyMap(config.termToggle)
+			utils.setKeyMap(config.ternLazyGit)
 			utils.setKeyMap(config.termToggleFloat)
+
+			function _G.set_terminal_keymaps()
+				local opts = { buffer = 0 }
+				vim.keymap.set("t", "<C-,>", [[<C-\><C-n>]], opts)
+			end
+			vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 		end,
 	},
 }
