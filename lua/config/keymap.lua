@@ -27,6 +27,7 @@ local options = {
 	bufferLine9 = { "n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts },
 
 	termToggle = { "n", "<space>tt", ":ToggleTerm<CR>", opts },
+	termToggleFloat = { "n", "<space>tf", ":ToggleTerm direction=float<CR>", opts },
 	nvimTreeToggle = { "n", "<space>ft", ":NvimTreeToggle<CR>", opts },
 	gitDiffthis = { "n", "<space>gd", ":Gitsigns diffthis<CR>", opts },
 	gitPreviewHunk = { "n", "<space>gp", ":Gitsigns preview_hunk<CR>", opts },
