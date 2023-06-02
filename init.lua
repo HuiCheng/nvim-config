@@ -13,6 +13,9 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("basic")
 require("lazy").setup("plugins")
+require("language/lua")
+require("language/golang")
+require("language/python")
 
 -- fix sometime leap not working
 require("nvim-tree.api").tree.open()

@@ -34,12 +34,12 @@ local options = {
 	GFiles = { "n", "<space>fg", ":Telescope live_grep<CR>", opts },
 	Buffers = { "n", "<space>fb", ":Telescope buffers<CR>", opts },
 
-	lspBufHover = { "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts }, -- 查看函数帮助文档
-	lspBufRename = { "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts }, -- 变量重名名
-	lspBufDefinition = { "n", "<C-[>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts }, -- 查看函数定义 回到上次的地方 <C-o>
-	lspBufDeclaration = { "n", "<C-]>", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts }, -- 查看函数声明
-	lspBufFormatting = { "n", "<space>lf", "<Cmd>lua vim.lsp.buf.format({async = true})<CR>", opts }, -- 格式化
-	lspBufReferences = { "n", "<space>lr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts }, -- 查看函数相关引用
+	lspBufHover = "K", -- 查看函数帮助文档
+	lspBufDefinition = "gd", -- 查看函数定义 回到上次的地方 <C-o>
+	lspBufRename = "<space>rn", -- 变量重名名
+	lspBufFormatting = "<space>lf", -- 格式化
+	lspBufReferences = "<space>lr", -- 查看函数相关引用
+	lspBufListWorkspaceFolders = "<space>lp", -- 环境目录
 }
 
 return options
