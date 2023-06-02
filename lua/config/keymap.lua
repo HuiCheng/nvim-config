@@ -28,6 +28,7 @@ local options = {
 
 	termToggle = { "n", "<space>tt", ":ToggleTerm<CR>", opts },
 	nvimTreeToggle = { "n", "<space>ft", ":NvimTreeToggle<CR>", opts },
+	gitDiffthis = { "n", "<space>gd", ":Gitsigns diffthis<CR>", opts },
 	gitPreviewHunk = { "n", "<space>gp", ":Gitsigns preview_hunk<CR>", opts },
 
 	Files = { "n", "<space>ff", ":Telescope find_files<CR>", opts },

@@ -8,6 +8,7 @@ return {
 
 			local utils = require("utils")
 			local config = require("config/keymap")
+			utils.setKeyMap(config.gitDiffthis)
 			utils.setKeyMap(config.gitPreviewHunk)
 		end,
 	},
