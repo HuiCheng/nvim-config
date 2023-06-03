@@ -26,13 +26,14 @@ local options = {
 	bufferLine8 = { "n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", opts },
 	bufferLine9 = { "n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts },
 
-	termToggle = { "n", "<space>tt", '<Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>', opts },
-	termToggleAll = { "n", "<space>ta", ":ToggleTermToggleAll<CR>", opts },
-	termToggleFloat = { "n", "<space>tf", ":ToggleTerm direction=float<CR>", opts },
-	ternLazyGit = { "n", "<space>tg", ':100TermExec cmd="lazygit; exit" direction=float<CR>', opts },
+	troubleToggle = { "n", "<space>tl", ":TroubleToggle<CR>", opts },
 	nvimTreeToggle = { "n", "<space>ft", ":NvimTreeToggle<CR>", opts },
 	gitDiffthis = { "n", "<space>gd", ":Gitsigns diffthis<CR>", opts },
 	gitPreviewHunk = { "n", "<space>gp", ":Gitsigns preview_hunk<CR>", opts },
+	termToggleAll = { "n", "<space>ta", ":ToggleTermToggleAll<CR>", opts },
+	termToggleFloat = { "n", "<space>tf", ":lua toggleTermFloat:toggle<CR>", opts },
+	ternLazyGit = { "n", "<space>tg", ':100TermExec cmd="lazygit; exit" direction=float<CR>', opts },
+	termToggle = { "n", "<space>tt", '<Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>', opts },
 
 	Files = { "n", "<space>ff", ":Telescope find_files<CR>", opts },
 	GFiles = { "n", "<space>fg", ":Telescope live_grep<CR>", opts },

@@ -24,6 +24,9 @@ return {
 				local opts = { buffer = 0 }
 				vim.keymap.set("t", "<C-,>", [[<C-\><C-n>]], opts)
 			end
+
+			_G.toggleTermFloat =
+				require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", direction = "float", count = 100 })
 			vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 		end,
 	},

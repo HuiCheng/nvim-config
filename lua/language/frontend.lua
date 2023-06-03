@@ -9,6 +9,10 @@ require("lspconfig").cssls.setup({
 	capabilities = _capabilities,
 })
 
+require("lspconfig").eslint.setup({
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
 require("lspconfig").cssmodules_ls.setup({
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })

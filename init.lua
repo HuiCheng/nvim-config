@@ -13,10 +13,10 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("basic")
 require("lazy").setup("plugins")
-require("language/frontend")
 require("language/lua")
 require("language/golang")
 require("language/python")
+require("language/frontend")
 
 -- fix sometime leap not working
 require("nvim-tree.api").tree.open()
