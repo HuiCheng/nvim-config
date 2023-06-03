@@ -1,8 +1,12 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		init = function()
+		dependencies = { "windwp/nvim-ts-autotag" },
+		config = function()
 			require("nvim-treesitter.configs").setup({
+				autotag = {
+					enable = true,
+				},
 				auto_install = true,
 				ensure_installed = { "html", "css", "vim", "lua", "go", "python", "javascript", "typescript" },
 				highlight = {
