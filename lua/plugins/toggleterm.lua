@@ -17,6 +17,7 @@ return {
 			local config = require("config/keymap")
 			utils.setKeyMap(config.termToggle)
 			utils.setKeyMap(config.ternLazyGit)
+			utils.setKeyMap(config.termToggleAll)
 			utils.setKeyMap(config.termToggleFloat)
 
 			function _G.set_terminal_keymaps()
