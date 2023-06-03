@@ -15,7 +15,7 @@ vim.scriptencoding = "utf-8"
 
 opt.tabstop = 4
 opt.shiftwidth = 4
-opt.sts = 4
+opt.softtabstop = 4
 opt.cursorline = true
 opt.ignorecase = true
 opt.termguicolors = true
@@ -42,4 +42,3 @@ vim.cmd([[
     endfunction
 ]])
 vim.api.nvim_command([[autocmd BufNewfile *.py call HeaderPython()]])
-vim.api.nvim_command([[autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact]])
