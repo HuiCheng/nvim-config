@@ -1,28 +1,53 @@
-local _capabilities = vim.lsp.protocol.make_client_capabilities()
-_capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("lspconfig").html.setup({
-	capabilities = _capabilities,
+	capabilities = capabilities,
+})
+
+require("lspconfig").emmet_ls.setup({
+	capabilities = capabilities,
+	filetypes = {
+		"css",
+		"eruby",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"less",
+		"sass",
+		"scss",
+		"svelte",
+		"pug",
+		"typescriptreact",
+		"vue",
+	},
+	init_options = {
+		html = {
+			options = {
+				["bem.enabled"] = true,
+			},
+		},
+	},
 })
 
 require("lspconfig").cssls.setup({
-	capabilities = _capabilities,
+	capabilities = capabilities,
 })
 
 require("lspconfig").eslint.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = capabilities,
 })
 
 require("lspconfig").cssmodules_ls.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = capabilities,
 })
 
 require("lspconfig").tsserver.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = capabilities,
 })
 
 require("lspconfig").tailwindcss.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = capabilities,
 })
 
 vim.api.nvim_command([[autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact]])
