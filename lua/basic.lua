@@ -34,8 +34,8 @@ utils.setKeyMap(config.vimWinRight)
 vim.cmd([[
     function HeaderPython()
     	call setline(1, "#!/usr/bin/env python3")
-    	call append(1, "# -*- coding: utf-8 -*-")
-    	call append(2, "# Hui @ " . strftime('%Y-%m-%d %T', localtime()))
+    	call  append(1, "# -*- coding: utf-8 -*-")
+    	call  append(2, "# Hui @ " . strftime('%Y-%m-%d %T', localtime()))
     	normal G
     	normal o
     	normal o
