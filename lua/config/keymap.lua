@@ -40,7 +40,7 @@ local options = {
 	Buffers = { "n", "<space>fb", ":Telescope buffers<CR>", opts },
 
 	lspBufHover = "K", -- 查看函数帮助文档
-	lspBufDefinition = "gd", -- 查看函数定义 回到上次的地方 <C-o>
+	lspBufDefinition = "<space>ld", -- 查看函数定义 回到上次的地方 <C-o>
 	lspBufRename = "<space>rn", -- 变量重名名
 	lspBufFormatting = "<space>lf", -- 格式化
 	lspBufReferences = "<space>lr", -- 查看函数相关引用
