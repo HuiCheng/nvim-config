@@ -5,12 +5,17 @@ table.insert(libs, "/usr/local/share/nvim/runtime/lua")
 table.insert(libs, "/usr/local/share/nvim/runtime/lua/vim")
 table.insert(libs, "/usr/local/share/nvim/runtime/lua/vim/lsp")
 
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
 require("lspconfig").lua_ls.setup({
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 	settings = {
 		Lua = {
 			runtime = {
 				version = "LuaJIT",
+				path = runtime_path,
 			},
 			diagnostics = {
 				globals = { "vim" },
