@@ -16,6 +16,7 @@ local options = {
 
 	bufferLinePrev = { "n", "<C-h>", ":BufferLineCyclePrev<CR>", opts },
 	bufferLineNext = { "n", "<C-l>", ":BufferLineCycleNext<CR>", opts },
+	bufferLineDelete = { "n", "<C-w>", ":BufferLineDelete<CR>", opts },
 	bufferLine1 = { "n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts },
 	bufferLine2 = { "n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts },
 	bufferLine3 = { "n", "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", opts },

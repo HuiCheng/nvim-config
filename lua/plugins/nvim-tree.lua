@@ -35,15 +35,6 @@ return {
 				end,
 			})
 
-			vim.api.nvim_create_autocmd("BufReadPost", {
-				callback = function()
-					local last_cursor_pos, last_line = vim.fn.line([['"]]), vim.fn.line("$")
-					if last_cursor_pos > 1 and last_cursor_pos <= last_line then
-						vim.fn.cursor(last_cursor_pos, 1)
-					end
-				end,
-			})
-
 			local utils = require("utils")
 			local config = require("config/keymap")
 			utils.setKeyMap(config.nvimTreeToggle)

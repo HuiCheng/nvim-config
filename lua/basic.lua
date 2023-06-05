@@ -42,3 +42,19 @@ vim.cmd([[
     endfunction
 ]])
 vim.api.nvim_command([[autocmd BufNewfile *.py call HeaderPython()]])
+
+-- save file, conflict with autopairs
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+-- 	pattern = { "*" },
+-- 	command = "silent! wall",
+-- 	nested = true,
+-- })
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+	callback = function()
+		local last_cursor_pos, last_line = vim.fn.line([['"]]), vim.fn.line("$")
+		if last_cursor_pos > 1 and last_cursor_pos <= last_line then
+			vim.fn.cursor(last_cursor_pos, 1)
+		end
+	end,
+})
