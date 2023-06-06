@@ -31,6 +31,9 @@ utils.setKeyMap(config.vimWinDown)
 utils.setKeyMap(config.vimWinLeft)
 utils.setKeyMap(config.vimWinRight)
 
+vim.cmd([[vnoremap <C-c> "+y]])
+vim.cmd([[inoremap <C-v> <ESC>"+pa]])
+
 vim.cmd([[
     function HeaderPython()
     	call setline(1, "#!/usr/bin/env python3")
