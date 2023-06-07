@@ -16,6 +16,7 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
+
 			local has_words_before = function()
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 				return col ~= 0
@@ -37,6 +38,10 @@ return {
 						end
 					end, { "i", "s" }),
 				}),
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
 				snippet = {
 					expand = function(args)
 						vim.fn["vsnip#anonymous"](args.body)
