@@ -32,8 +32,8 @@ local options = {
 	gitDiffthis = { "n", "<space>gd", ":Gitsigns diffthis<CR>", opts },
 	gitPreviewHunk = { "n", "<space>gp", ":Gitsigns preview_hunk<CR>", opts },
 	termToggleAll = { "n", "<space>ta", ":ToggleTermToggleAll<CR>", opts },
-	termToggleFloat = { "n", "<space>tf", ":ToggleTerm direction=float<CR>", opts },
-	ternLazyGit = { "n", "<space>tg", ":lua toggleTermFloat:toggle()<CR>", opts },
+	termToggleFloat = { "n", "<space>tf", ":ToggleTerm direction=float count=101<CR>", opts },
+	ternLazyGit = { "n", "<space>tg", ":lua lazygitTermFloat:toggle()<CR>", opts },
 	termToggle = { "n", "<space>tt", '<Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>', opts },
 
 	Files = { "n", "<space>ff", ":Telescope find_files<CR>", opts },
