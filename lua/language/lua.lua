@@ -18,7 +18,7 @@ require("lspconfig").lua_ls.setup({
 				path = runtime_path,
 			},
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "hs", "vim" },
 			},
 			workspace = {
 				checkThirdParty = false,
