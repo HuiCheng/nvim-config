@@ -36,8 +36,9 @@ local options = {
 	ternLazyGit = { "n", "<space>tg", ":lua lazygitTermFloat:toggle()<CR>", opts },
 	termToggle = { "n", "<space>tt", '<Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>', opts },
 
-	Files = { "n", "<space>ff", ":Telescope find_files<CR>", opts },
-	GFiles = { "n", "<space>fg", ":Telescope live_grep<CR>", opts },
+	FindByFileName = { "n", "<space>ff", ":Telescope find_files<CR>", opts },
+	FindByGitStatus = { "n", "<space>fgs", ":Telescope git_status<CR>", opts },
+	FindByFileContent = { "n", "<space>fc", ":Telescope live_grep<CR>", opts },
 	Buffers = { "n", "<space>fb", ":Telescope buffers<CR>", opts },
 
 	lspBufHover = "K", -- 查看函数帮助文档
