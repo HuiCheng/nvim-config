@@ -7,8 +7,11 @@ return {
 				autotag = {
 					enable = true,
 				},
+				modules = {},
 				auto_install = true,
-				ensure_installed = { "html", "css", "vim", "lua", "go", "python", "javascript", "typescript" },
+				ensure_installed = { "cpp", "html", "css", "vim", "lua", "go", "python", "javascript", "typescript" },
+				ignore_install = {},
+				sync_install = false,
 				highlight = {
 					enable = true,
 					disable = { "html" },

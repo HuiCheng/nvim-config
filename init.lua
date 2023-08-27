@@ -13,6 +13,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("basic")
 require("lazy").setup("plugins")
+require("language/c")
 require("language/lua")
 require("language/bash")
 require("language/golang")
