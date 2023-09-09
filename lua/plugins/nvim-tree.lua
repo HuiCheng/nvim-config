@@ -13,7 +13,7 @@ return {
 				actions = {
 					open_file = { quit_on_open = false },
 				},
-				filters = { custom = { "^.git$", "^node_modules$" } },
+				filters = { git_ignored = false, custom = { "^.git$", "^node_modules$" } },
 				renderer = {
 					icons = {
 						show = {
