@@ -2,8 +2,6 @@ local opts = { noremap = true, silent = true }
 local options = {
 	vimAll = { "n", "<C-a>", "gg<S-v>G", opts },
 	vimSave = { "n", "<C-s>", ":w<CR>", opts },
-	vimAdd = { "n", "+", "<C-x>", opts },
-	vimSub = { "n", "-", "<C-a>", opts },
 
 	vimWinNext = { "n", "zw", "<C-w>w", opts },
 	vimWinUp = { "n", "zk", "<C-w>k", opts },

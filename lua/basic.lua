@@ -23,8 +23,6 @@ opt.termguicolors = true
 opt.autoread = true
 opt.autowriteall = true
 
-utils.setKeyMap(config.vimAdd)
-utils.setKeyMap(config.vimSub)
 utils.setKeyMap(config.vimAll)
 utils.setKeyMap(config.vimSave)
 
