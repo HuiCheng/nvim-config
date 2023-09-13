@@ -47,6 +47,9 @@ local options = {
 	lspBufFormatting = "<space>lf", -- 格式化
 	lspBufReferences = "<space>lr", -- 查看函数相关引用
 	lspBufListWorkspaceFolders = "<space>lp", -- 环境目录
+
+	Translate = { "n", "<space>ts", ":TranslateW<CR>", opts },
+	VTranslate = { "v", "<space>ts", ":'<,'>TranslateW<CR>", opts },
 }
 
 return options
