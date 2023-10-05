@@ -10,7 +10,20 @@ return {
 				},
 				modules = {},
 				auto_install = true,
-				ensure_installed = { "cpp", "html", "css", "vim", "lua", "go", "python", "javascript", "typescript" },
+				ensure_installed = {
+					"cpp",
+					"html",
+					"css",
+					"vim",
+					"lua",
+					"go",
+					"dockerfile",
+					"python",
+					"json",
+					"javascript",
+					"typescript",
+					"yaml",
+				},
 				ignore_install = {},
 				sync_install = false,
 				highlight = {
@@ -18,9 +31,7 @@ return {
 					disable = { "html" },
 					additional_vim_regex_highlighting = false,
 				},
-				indent = {
-					enable = true,
-				},
+				indent = { enable = true },
 			})
 		end,
 	},
