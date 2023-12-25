@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = { "windwp/nvim-ts-autotag" },
-		commit = "15129f6d70a4d7adc380abe57a64af93478f72e5", -- fix error on last master code
+		build = ":TSUpdate all",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				autotag = {
