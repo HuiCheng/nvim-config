@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
+vim.opt.clipboard:append("unnamedplus")
+
 vim.cmd([[ let g:ale_linters = {'cpp' : []} ]]) -- fix error on cpp file
 
 require("basic")
