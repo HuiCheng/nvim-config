@@ -2,11 +2,8 @@ return {
 	{
 		"dense-analysis/ale",
 		init = function()
-			local utils = require("utils")
-			local config = require("config/keymap")
-
-			utils.setKeyMap(config.alePrev)
-			utils.setKeyMap(config.aleNext)
+			vim.keymap.set("n", "<C-j>", ":ALENextWrap<CR>", { desc = "ALENextWrap" })
+			vim.keymap.set("n", "<C-k>", ":ALEPreviousWrap<CR>", { desc = "ALEPreviousWrap" })
 		end,
 	},
 }

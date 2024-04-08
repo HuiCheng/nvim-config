@@ -1,16 +1,33 @@
 return {
 	{
-		"sbdchd/neoformat",
+		"stevearc/conform.nvim",
+		cmd = { "ConformInfo" },
+		event = { "BufNewFile", "BufWritePre" },
+		keys = {
+			{
+				"<leader>f",
+				function()
+					require("conform").format({ async = true, lsp_fallback = true })
+				end,
+				mode = { "n", "v" },
+				desc = "Format buffer",
+			},
+		},
+		opts = {
+			format_on_save = { timeout_ms = 500, lsp_fallback = true },
+			formatters = {
+				shfmt = {
+					prepend_args = { "-i", "2" },
+				},
+			},
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "isort", "black" },
+				go = { "goimports", "gofumpt" },
+			},
+		},
 		init = function()
-			vim.g.neoformat_try_formatprg = 1
-			vim.g.neoformat_only_msg_on_error = 1
-			vim.g.neoformat_run_all_formatters = 1
-
-			vim.g.neoformat_basic_format_trim = 0
-			vim.g.neoformat_basic_format_align = 0
-			vim.g.neoformat_basic_format_retab = 0
-
-			vim.api.nvim_command([[autocmd BufWritePre * undojoin | Neoformat]])
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
 	},
 }

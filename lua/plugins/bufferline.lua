@@ -2,20 +2,21 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- font-hack-nerd-font
-		config = function()
-			require("bufferline").setup({
-				options = {
-					diagnostics = "nvim_lsp",
-					offsets = {
-						{
-							text = "NvimTree",
-							filetype = "NvimTree",
-							highlight = "Directory",
-							text_align = "left",
-						},
+		config = {
+			options = {
+				diagnostics = "nvim_lsp",
+				offsets = {
+					{
+						text = "NvimTree",
+						filetype = "NvimTree",
+						highlight = "Directory",
+						text_align = "left",
 					},
 				},
-			})
+			},
+		},
+		init = function()
+			local keymap = vim.keymap
 
 			vim.api.nvim_create_user_command("BufferLineDelete", function()
 				local file_exists = vim.fn.filereadable(vim.fn.expand("%p"))
@@ -32,21 +33,9 @@ return {
 				vim.cmd(force and "bd!" or string.format("bp | bd! %s", vim.api.nvim_get_current_buf()))
 			end, { desc = "Delete the current Buffer while maintaining the window layout" })
 
-			local utils = require("utils")
-			local config = require("config/keymap")
-
-			utils.setKeyMap(config.bufferLinePrev)
-			utils.setKeyMap(config.bufferLineNext)
-			utils.setKeyMap(config.bufferLineDelete)
-			utils.setKeyMap(config.bufferLine1)
-			utils.setKeyMap(config.bufferLine2)
-			utils.setKeyMap(config.bufferLine3)
-			utils.setKeyMap(config.bufferLine4)
-			utils.setKeyMap(config.bufferLine5)
-			utils.setKeyMap(config.bufferLine6)
-			utils.setKeyMap(config.bufferLine7)
-			utils.setKeyMap(config.bufferLine8)
-			utils.setKeyMap(config.bufferLine9)
+			keymap.set("n", "<C-c>", ":BufferLineDelete<CR>", { desc = "close the current buffer" })
+			keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", { desc = "move one buffer to the left" })
+			keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", { desc = "move one buffer to the right" })
 		end,
 	},
 }

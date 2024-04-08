@@ -16,7 +16,13 @@ vim.opt.clipboard:append("unnamedplus")
 vim.cmd([[ let g:ale_linters = {'cpp' : []} ]]) -- fix error on cpp file
 
 require("basic")
-require("lazy").setup("plugins")
+require("lazy").setup({
+	{ import = "plugins" },
+	{ import = "plugins.lsp" },
+}, {
+	change_detection = { notify = false },
+	checker = { enabled = true, notify = false },
+})
 require("language/c")
 require("language/lua")
 require("language/bash")

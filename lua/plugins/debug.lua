@@ -124,15 +124,17 @@ return {
 				dapui.close()
 			end
 
-			vim.keymap.set("n", "<F5>", require("dap").continue)
-			vim.keymap.set("n", "<space>do", require("dap").step_over)
-			vim.keymap.set("n", "<space>di", require("dap").step_into)
-			vim.keymap.set("n", "<space>dg", require("dap").step_out)
-			vim.keymap.set("n", "<space>db", require("dap").toggle_breakpoint)
+			vim.keymap.set("n", "<F5>", require("dap").continue, { desc = "Continue" })
+			vim.keymap.set("n", "<space>dc", require("dap").continue, { desc = "Continue" })
+			vim.keymap.set("n", "<space>do", require("dap").step_over, { desc = "Step over" })
+			vim.keymap.set("n", "<space>di", require("dap").step_into, { desc = "Step into" })
+			vim.keymap.set("n", "<space>dg", require("dap").step_out, { desc = "Step out" })
+			vim.keymap.set("n", "<space>db", require("dap").toggle_breakpoint, { desc = "Toggle breakpoint" })
 		end,
 		dependencies = {
 			"leoluz/nvim-dap-go",
 			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
 		},
 	},
 }
